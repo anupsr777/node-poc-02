@@ -12,7 +12,9 @@ export class LoginComponent {
   public password: string = "";
   public error: string = "";
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) {
+    console.log("hi")
+   }
 
   public submit() {
     this.auth.login(this.username, this.password)
