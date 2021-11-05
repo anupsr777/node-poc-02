@@ -25,6 +25,15 @@ export class AuthService {
         })
       );
   }
+  signUp(username: string, password: string): Observable<boolean> {
+    let signUpurl = this.url+'/api/signup'; 
+    return this.http.post<{ status: boolean }>(signUpurl, { username: username, password: password },this.httpOptions)
+      .pipe(
+        map(result => {
+          return true;
+        })
+      );
+  }
 
   logout() {
     localStorage.removeItem('access_token');

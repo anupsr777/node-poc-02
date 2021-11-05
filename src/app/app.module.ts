@@ -9,7 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {AuthService} from './auth.service'
 import {AuthGuard} from './auth.guard';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component'
 // ...
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -18,7 +19,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

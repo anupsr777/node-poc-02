@@ -7,13 +7,19 @@ import { first } from 'rxjs/operators';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   public username: string = "";
   public password: string = "";
   public error: string = "";
 
   constructor(private auth: AuthService, private router: Router) {
     console.log("hi")
+   }
+
+   ngOnInit():void {
+        if(this.auth.loggedIn){
+          this.router.navigate(['home']);
+        }
    }
 
   public submit() {
